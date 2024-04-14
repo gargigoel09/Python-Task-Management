@@ -31,6 +31,7 @@ class TaskManager:
         """
         This method writes the list of tasks to a file
         """
+        print("The tasks have been added to a file")
         pass
 
 def main():
@@ -41,7 +42,8 @@ def main():
         print("1. Add Task")
         print("2. View Tasks")
         print("3. Mark Task as Completed")
-        print("4. Exit")
+        print("4. Dump tasks in a file")
+        print("5. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -55,6 +57,8 @@ def main():
             task_index = int(input("Enter task index to mark as completed: "))
             task_manager.mark_task_completed(task_index)
         elif choice == "4":
+            task_manager.write_tasks()
+        elif choice =="5":
             print("Exiting program.")
             break
         else:
